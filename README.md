@@ -1,32 +1,52 @@
-Episcopal WordPress themes
-==========================
+Episcopal WordPress plugins
+===========================
 
-Free branded WordPress themes from [The Episcopal Church](http://episcopalchurch.org/), with continuing community development.
+A collection of WordPress plugins for websites of Episcopal churches, dioceses, and organizations.
 
-Each theme includes three color scheme options availible via WordPress' theme customizer.
+## Background
 
-## Theme installation
+In December 2014, [The Episcopal Church][E1] released free, branded WordPress themes for use by congregations and dioceses. That code became the base for continuing development as the [episcopal_wordpress][G1] project on GitHub.
 
-Copy the directory (folder) for the desired theme into `wp-content/themes/` as a subdirectory.
+The themes provided some capabilities &ndash; Episcopal News Service headlines and sidebar lists of  service times and parish contacts &ndash; that would be more useful (and easier to maintain) as individual plugins.
 
-## Plugins not included
+## Philosophy
 
-The initial ZIP archive release included four plugins, which may be downloaded separately:
+[Separation of concerns][W1] is a technical term for simple idea. In [The Episcopal Church][E1], we can see a liturgical separation of concerns in a typical Sunday Eucharist:
 
-* [Calendar][P1] v1.3.3 (no longer available at `wordpress.org`)
-* [Simple Social Icons][P2] v1.0.6
-* [Simple Subscribe][P3] v1.5.6
-* [Slideshow][P4] v2.2.21
+The congregation needs a priest to celebrate the Eucharist. At the altar rail, the priest *could* serve the bread and then serve the wine. It's optional to have a Lay Eucharist Minister there to serve the wine, but it will make commuion go more smoothly.
+
+What does that have to do with themes and plugins?
+
+A WordPress site needs a them to display and format content. A theme *can* do things like define custom post types and [add widget-like content][C2], but it probably *shouldn't*. An optional plugin can [define custom post types][C1] and provide widgets that are availible regardless of the site's theme.
+
+## Plugin installation
+
+Copy the directory (folder) for the desired plugin into wp-content/plugins/ as a subdirectory.
+
+### Caveat
+
+:heavy_exclamation_mark:
+These plugins are under *active development* and may be *unstable*. **Install at your own risk.**
+
+That said, if a plugin breaks your site, deleting the entire directory (folder) for that plugin should fix things. :wink:
 
 ## License
 
-Yet to be determined, but expect something compatible with GNU's GPLv2.
+Yet to be determined, but &ndash; like the [episcopal_wordpress][G1] project &ndash; expect something compatible with GNU's GPLv2.
 
 ## For more information 
 
-See the [project wiki](https://github.com/shelleyvadams/episcopal_wordpress/wiki).
+### About individual plugins
 
-[P1]: http://www.kieranoshea.com/projects/calendar/
-[P2]: https://wordpress.org/plugins/simple-social-icons/
-[P3]: https://wordpress.org/plugins/simple-subscribe/
-[P4]: https://wordpress.org/plugins/slideshow-jquery-image-gallery/
+See `readme.txt` in each subdirectory.
+
+### About the project
+
+See the [episcopal_wordpress wiki][G2].
+
+[W1]: https://en.wikipedia.org/wiki/Separation_of_concerns
+[E1]: http://episcopalchurch.org/
+[C1]: http://codex.wordpress.org/Post_Types#A_word_about_custom_post_types_as_a_plugin
+[C2]: http://codex.wordpress.org/Theme_Development#Widgets_.28sidebar.php.29
+[G1]: https://github.com/shelleyvadams/episcopal_wordpress/
+[G2]: https://github.com/shelleyvadams/episcopal_wordpress/wiki
