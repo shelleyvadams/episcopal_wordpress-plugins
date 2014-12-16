@@ -8,7 +8,7 @@
 		<p><?php echo $the_excerpt ?>&nbsp;&nbsp;<a class="more-link" href="<?php echo get_permalink( get_page_by_path( 'about' ) ) ?>">More...</a></p>
 
 		<h2 class="sidebar">Service Times</h2>
-		<div class="subscribe-wrapper">
+		<div class="service-times-wrapper">
 			<?php $args = array(
 				'post_type'  => 'services',
 				'posts_per_page' => '-1',
@@ -34,11 +34,6 @@
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
-
-
-		<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar')) : else : ?>
-
-		<?php endif; ?>
 
 		<h2 class="sidebar">Parish Leaders</h2>
 		<div class="parish-leaders-wrapper">
@@ -76,5 +71,7 @@
 
 			<p class="button"><a href="<?php echo get_permalink( get_page_by_path( 'contacts' ) ) ?>">View Full List</a>
 		</div>
+		<!--/.parish-leaders-wrapper-->
 	</div>
+	<!--/.sidebar-contents-->
 </aside>
