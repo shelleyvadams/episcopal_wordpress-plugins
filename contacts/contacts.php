@@ -1,49 +1,57 @@
-<?php /* Template name: Contacts */ ?>
-<section class="contact">
-	<?php $id = get_the_ID(); ?>
+<?php
 
-	<?php if ( have_posts() ): ?>
-		<?php while ( have_posts() ) : the_post();
-			$google_map = (trim(get_post_meta($id, '_ns_map', true)));
-		?>
-			<h3><?php the_title(); ?></h3>
-			<article class="address clearfix"><?php the_content(); ?> <?php echo $google_map ?></article>
-		<?php endwhile; ?>
-	<?php endif; ?>
-</section>
+	/* ========================================================================================================================
 
-<section class="parish-leaders">
-	<h4>Parish Leaders</h4>
+	Custom Post Types
 
-	<?php $args = array(
-		'post_type'  => 'people',
-		'order'      => 'ASC');
-	?>
+	======================================================================================================================== */
 
-	<?php
-		global $bio;
-		global $args;
+	add_action( 'init', 'ns_register_customposts', 0 );
+	function ns_register_customposts() {
 
-		$the_query = new WP_Query($args);
+		register_post_type('people',
+			array(	'label' => 'people',
+			'description' => 'people',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'show_in_nav_menus' => true,
+			'capability_type' => 'page',
+			'hierarchical' => true,
+			'query_var' => true,
+			'has_archive' => false,
+			'rewrite' => true,
+			'exclude_from_search' => true,
+			'supports' => array('title','page-attributes','thumbnail'),
+			'menu_position' => 28,
+			// 'taxonomies' => array('category'),
+			'labels' => array (
+			'name' => 'Parish Leaders',
+			'singular_name' => 'Person',
+			'menu_name' => 'Parish Leaders',
+			'add_new' => 'Add Person',
+			'add_new_review' => 'Add New Person',
+			'edit' => 'Edit',
+			'edit_review' => 'Edit Person',
+			'new_review' => 'New Person',
+			'view' => 'View Person',
+			'view_review' => 'View Person',
+			'search_reviews' => 'Search Person',
+			'not_found' => 'No Person Found',
+			'not_found_in_trash' => 'No Person Found in Trash',
+			'parent' => 'Parent Person',
+		),) );
 
-		if ( $the_query->have_posts() ):
-	?>
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post();
+	}
 
-			$number = (trim(get_post_meta($the_query->post->ID, '_ns_number', true)));
-			$email = (trim(get_post_meta($the_query->post->ID, '_ns_email', true)));
-		?>
-			<article class="person clearfix">
-				<?php the_post_thumbnail(); ?>
+	/* ========================================================================================================================
 
-				<div class="post-content-wrapper">
-					<ul>
-						<li><?php the_title(); ?></li>
-						<li><?php echo $number ?></li>
-						<li><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></li>
-					</ul>
-				</div>
-			</article>
-		<?php endwhile; ?>
-	<?php endif; ?>
-</section>
+	Custom Meta Boxes
+
+	======================================================================================================================== */
+
+	include_once 'metaboxes/setup.php';
+
+	include_once 'metaboxes/bio-spec.php';
+
+	include_once 'metaboxes/map-spec.php';
