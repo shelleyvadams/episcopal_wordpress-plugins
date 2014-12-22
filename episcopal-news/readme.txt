@@ -26,9 +26,9 @@ a free website resource for dioceses and congregations.
 == Installation ==
 
 After activating the plugin, you can add headlines to your WordPress site using
-the shortcode `[episcopalnews]`. In future releases, this shortcode will support
-parameters to control the number of headlines as well as the display of item
-summaries and thumbnail images.
+the shortcode `[episcopalnews]`. See &ldquo;Usage&rdquo; section for parameter
+documentation.
+
 
 The featured videos playlist can be embedded with the shortcode
 `[episcopalvideo]`. Currently, there are no plans to add parameters to this
@@ -83,3 +83,25 @@ No. Contact the [Office of Communication](http://www.episcopalchurch.org/office/
 
 = 0.0.1 =
 * First alpha release, there's nothing to upgrade from.
+
+
+== Usage ==
+
+The `[episcopalnews]` shortcode supports the following parameters:
+
+* `getitems` specifies the number of news items to display. This should be an integer greater than zero. Default value: 5.
+* `requestedfeed` specifies a particular set of news items to display. Supported values (case insensitive):
+* * `blog` &ndash; Featured posts from the [ENS Blog](http://episcopaldigitalnetwork.com/ens/category/ens-blog/).
+* * `main` &ndash; Posts from the main ENS news sections: [Top Stories](http://episcopaldigitalnetwork.com/ens/top-stories/), [Churchwide](http://episcopaldigitalnetwork.com/ens/churchwide/), [Worldwide](http://episcopaldigitalnetwork.com/ens/worldwide/) and [Commentary](http://episcopaldigitalnetwork.com/ens/commentary/).
+* * `Spanish` &ndash; [Noticias](http://episcopaldigitalnetwork.com/ens/noticias/) Spanish translations of posts from the main ENS news sections.
+* * `default` &ndash; Posts from the main ENS news sections and featured posts from the ENS Blog. This is the default value, used when `requestedfeed` is unspecified or an unsupported value.
+* * `all` &ndash; Everything.
+
+Examples:
+
+* Three Spanish-language items: `[episcopalnews getitems="3" requestedfeed="Spanish"]`
+* Five items featured on the ENS Blog: `[episcopalnews requestedfeed="blog"]` or `[episcopalnews getitems="5" requestedfeed="blog"]`
+* Five items from the main news sections and ENS Blog: `[episcopalnews]` or `[episcopalnews getitems="5"]` or `[episcopalnews requestedfeed="default"]` or `[episcopalnews getitems="5" requestedfeed="default"]`
+
+In future releases, this shortcode will also support parameters to control the
+display of item summaries and thumbnail images.
