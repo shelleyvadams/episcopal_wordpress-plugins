@@ -3,6 +3,13 @@ Episcopal WordPress plugins
 
 A collection of WordPress plugins for websites of Episcopal churches, dioceses, and organizations.
 
+Plugin         | Status
+---------------|-------
+contacts       | :wrench: In development
+episcopal-news | :construction: Ready for testing
+service-times  | :wrench: In development
+
+
 ## Background
 
 In December 2014, [The Episcopal Church][E1] released free, branded WordPress themes for use by congregations and dioceses. That code became the base for continuing development as the [episcopal_wordpress][G1] project on GitHub.
