@@ -39,7 +39,7 @@ That said, if a plugin breaks your site, deleting the entire directory (folder) 
 
 ## License
 
-Yet to be determined, but &ndash; like the [episcopal_wordpress][G1] project &ndash; expect something compatible with GNU's GPLv2.
+GNU General Public License, version 2.0 or later (GPLv2+).
 
 ## For more information 
 
