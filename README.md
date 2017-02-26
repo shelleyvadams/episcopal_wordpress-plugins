@@ -5,7 +5,7 @@ A collection of WordPress plugins for websites of Episcopal churches, dioceses, 
 
 Plugin         | Status
 ---------------|-------
-contacts       | :wrench: In development
+contacts       | :x: Deprecated; try Adam Tootle's [Staff Directory][D1] ([GitHub project][D2]).
 episcopal-news | :construction: Ready for testing
 service-times  | :wrench: In development
 
@@ -57,3 +57,5 @@ See the [episcopal_wordpress wiki][G2].
 [C2]: http://codex.wordpress.org/Theme_Development#Widgets_.28sidebar.php.29
 [G1]: https://github.com/shelleyvadams/episcopal_wordpress/
 [G2]: https://github.com/shelleyvadams/episcopal_wordpress/wiki
+[D1]: https://wordpress.org/plugins/staff-directory/
+[D2]: https://github.com/adamtootle/staff-directory
